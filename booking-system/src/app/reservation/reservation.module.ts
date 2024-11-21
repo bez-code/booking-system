@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,9 @@ import { ListComponent } from './list/list.component';
     ListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ReservationModule { }
