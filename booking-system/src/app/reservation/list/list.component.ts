@@ -14,10 +14,10 @@ export class ListComponent implements OnInit {
   constructor(private services: ReservationService) { }
 
   ngOnInit(): void {
-    this.loadReservations();
+    this.reservations = this.services.getReservations();
   }
 
-  loadReservations(): void {
-    this.reservations = this.services.getReservations();
+  deleteReservation(id:string){
+    this.services.deleteReservation(id);
   }
 }

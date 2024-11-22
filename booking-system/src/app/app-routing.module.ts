@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "new", component: FormComponent },
   { path: "list", component: ListComponent },
+  {path:"edit/:id", component:FormComponent}
 ];
 
 @NgModule({

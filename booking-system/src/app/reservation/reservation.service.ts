@@ -27,16 +27,17 @@ export class ReservationService {
   }
 
   addReservation(reservation: Reservation): void {
+    reservation.id = new Date().toString();
     this.reservations.push(reservation);
     localStorage.setItem("reservation", JSON.stringify(this.reservations))
   }
-  deleteReservartion(id: string): void {
-    let index = this.reservations.findIndex(res => res.id == id)
-    this.reservations.slice(index)
+  deleteReservation(id: string): void {
+    let index = this.reservations.findIndex(res => res.id === id)
+    this.reservations.splice(index)
     localStorage.setItem("reservation", JSON.stringify(this.reservations))
 
   }
-  upDateIndex(updateReservation: Reservation): void {
+  updateIndex(updateReservation: Reservation): void {
     let index = this.reservations.findIndex(res => res.id == updateReservation.id)
     this.reservations[index] = updateReservation;
     localStorage.setItem("reservation", JSON.stringify(this.reservations))
