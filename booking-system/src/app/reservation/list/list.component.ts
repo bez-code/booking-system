@@ -14,10 +14,14 @@ export class ListComponent implements OnInit {
   constructor(private services: ReservationService) { }
 
   ngOnInit(): void {
-    this.reservations = this.services.getReservations();
+    this.services.getReservations().subscribe(reservations => {
+      this.reservations = reservations;  
+    });
   }
 
-  deleteReservation(id:string){
-    this.services.deleteReservation(id);
+  deleteReservation(id: string) {
+    this.services.deleteReservation(id).subscribe(res=>{
+      this.reservations = this.reservations.filter(reservation => reservation.id == id);
+    })
   }
 }

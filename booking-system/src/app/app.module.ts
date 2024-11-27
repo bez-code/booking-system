@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HomeModule } from './home/home.module';
 import { ReservationModule } from './reservation/reservation.module';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import { ReservationModule } from './reservation/reservation.module';
     AppRoutingModule,
     FormsModule,
     HomeModule,
-    ReservationModule
+    ReservationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
